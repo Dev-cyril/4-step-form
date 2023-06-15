@@ -1,0 +1,144 @@
+.info {
+    display: flex;
+    gap: 8px;
+    width: 80%;
+    margin: auto;
+    flex-direction: column;
+}
+
+.cards-container-plan{
+    display: flex;
+    gap: 30px;
+}
+
+.card{
+    box-shadow: .3px .3px 1px 3px rgba(128, 128, 128, 0.13);
+    width: 30%;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.card:focus{
+    border: 1px solid rgba(0, 0, 0, 0.39);
+}
+
+.info h2, .info h3, .info h5{
+    color: hsla(240, 93%, 17%, 0.945);
+}
+
+h4{
+    color: rgba(99, 96, 93, 0.767);
+    font-size: 12px;
+}
+svg{
+    margin-bottom: 30px;
+}
+
+.toggle{
+    width: 100%;
+    margin: 20px 0;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 5px;
+    background-color: rgba(127, 255, 212, 0.185);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.disabled {
+    color: #cccccccb;
+    opacity: 0.3;
+}
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+input+.slider {
+    background-color: #130468;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+@media (max-width: 767px) {
+    .cards-container-plan{
+        flex-wrap: wrap;
+    }
+    .card{
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+    .details {
+        width: 90%;
+        background-color: #fff;
+        border-radius: 15px;
+        height: fit-content;
+        margin-top: -150px;
+        z-index: 1;
+    }
+    .card div{
+        width: 40%;
+    }
+    .info h2,
+    .info h3,
+    .info h6 {
+        margin: 5px 0 0;
+    }
+
+    h4 {
+        margin: 5px 0 0;
+    }
+    svg{
+        margin-bottom: 0;
+    }
+}

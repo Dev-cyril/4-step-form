@@ -1,0 +1,71 @@
+
+.info {
+    display: flex;
+    gap: 8px;
+    width: 80%;
+    margin: auto;
+    flex-direction: column;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.card-adds {
+    box-shadow: .3px .3px 1px 3px rgba(128, 128, 128, 0.13);
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px 20px;
+    display: flex;
+}
+.card-adds div:nth-child(2){
+    width: 70%;
+    margin: 5px 10px;
+}
+input[type='checkbox']{
+    width: 20px;
+    height: 20px;
+    box-shadow: none;
+}
+.price{
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.61);
+}
+.card:focus {
+    border: 1px solid rgba(0, 0, 0, 0.39);
+}
+
+.info h2,
+.info h3,
+.info h6 {
+    color: hsla(240, 93%, 17%, 0.945);
+    margin: 5px 0 0;
+}
+
+@media (max-width: 767px) {
+    .cards-container {
+        flex-wrap: wrap;
+    }
+
+    .details {
+        width: 90%;
+        background-color: #fff;
+        border-radius: 15px;
+        height: fit-content;
+        margin-top: -150px;
+        z-index: 1;
+        padding: 25px 0;
+    }
+
+    h4 {
+        margin: 5px 0 0;
+    }
+}

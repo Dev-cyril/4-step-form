@@ -1,0 +1,140 @@
+.details{
+    width: 100%;
+    margin: auto;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 80%;
+    margin: auto;
+}
+
+h2{
+    font-weight: 800;
+}
+
+label{
+    margin: 10px 0 0;
+}
+
+input{
+    width: 100%;
+    border: 0;
+    border-radius: 10px;
+    padding-left: 10px;
+    height: 40px;
+    box-shadow: 0.5px 0.5px 2px 3px rgba(128, 128, 128, 0.123);
+}
+
+input:focus{
+    outline: none;
+}
+/* Form group
+============================= */
+
+.form-group {
+    padding: 1rem;
+    margin: 0;
+}
+
+.form-group:focus-within {
+    transition: 0.3s;
+}
+
+.form-field-container {
+    position: relative;
+}
+
+.form-field-icon {
+    font-style: normal;
+}
+
+/* Form help
+============================= */
+
+.form-group .form-help {
+    margin: 0;
+    line-height: 1.3;
+    letter-spacing: 0.019rem;
+    color: rgb(148, 36, 36);
+    font-size: small;
+    float: right;
+    max-height: 0;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.form-group:focus-within .form-help {
+    max-height: 20rem;
+    margin: 0.4rem 0 0;
+}
+
+input:not(:placeholder-shown)~.form-field-icon::after {
+    height: 100%;
+    right: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 1.3em;
+}
+
+/* Because inputs are invalid by default, we need to be careful and show the icon when we are not in focus and when when the input is not empty (placeholder-shown). Careful with this one because it is not supported everywhere. */
+
+input:required:invalid:not(:focus):not(:placeholder-shown)~.form-field-icon::after {
+    content: '✘';
+    color: rgba(255, 0, 0, 0.514);
+}
+
+input:required:valid~.form-field-icon::after {
+    content: '✔';
+    color: rgba(4, 59, 8, 0.877);
+}
+
+/* We want to hide the helper text when we are not in focus. The tilte allows us to select a sibling element in CSS */
+
+input:required:valid~.form-help {
+    max-height: 0;
+}
+
+/* Showing a border in a different color is good but not enough. For accessibility purposes, we added an icon when the input is valid or invalid to have a visual distinction that is not only color based.*/
+
+input:required:invalid:not(:focus):not(:placeholder-shown){
+    border: 0.1rem solid rgba(255, 0, 0, 0.514);
+}
+
+input:required:valid:not(:placeholder-shown) {
+    border: 0.1rem solid rgba(12, 1, 12, 0.418);
+}
+
+button{
+    background-color: rgb(2, 2, 82);
+    border-radius: 10px;
+}
+
+button:hover{
+    background-color: rgb(17, 17, 134);
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .details{
+        width: 90%;
+        background-color: #fff;
+        border-radius: 15px;
+        height: fit-content;
+        margin-top: -150px;
+        z-index: 1;
+    }
+
+    .info{
+        width: 95%;
+    }
+}
+
+@media (max-width: 767px) {
+    .details{
+        margin-top: -100px;
+    }
+}

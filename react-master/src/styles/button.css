@@ -1,0 +1,40 @@
+.button-wrapper {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.back-button {
+    cursor: pointer;
+    width: 50%;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.button-container{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.next-button,
+.finish-button {
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    color: rgba(240, 255, 255, 0.733);
+}
+.next-button:hover,
+.finish-button:hover {
+    background-color: #0818f3d2;
+}
+button:disabled:hover{
+    cursor: not-allowed;
+    background-color: rgba(47, 47, 165, 0.26);
+}

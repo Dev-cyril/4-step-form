@@ -1,9 +1,10 @@
 import React from 'react'
+import '../styles/success.css'
 
 function Success () {
 
     return(
-        <section className='details' style={{width: '70%', textAlign: 'center'}}>
+        <section className='final'>
             <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
                 <g fill="none"><circle cx="40" cy="40" r="40" fill="#F9818E"/>
                 <path fill="#E96170" d="M48.464 79.167c.768-.15 1.53-.321 2.288-.515a40.04 40.04 0 0 0 3.794-1.266 40.043 40.043 0 0 0 3.657-1.63 40.046 40.046 0 0 0 12.463-9.898A40.063 40.063 0 0 0 78.3 51.89c.338-1.117.627-2.249.867-3.391L55.374 24.698a21.6 21.6 0 0 0-15.332-6.365 21.629 21.629 0 0 0-15.344 6.365c-8.486 8.489-8.486 22.205 0 30.694l23.766 23.775Z"/>

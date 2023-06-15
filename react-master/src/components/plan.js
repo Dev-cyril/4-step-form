@@ -23,6 +23,12 @@ function Plan() {
     const { setIsButtonDisabled } = useContext(ButtonContext);
     const [toggleOn, setToggleOn] = useState(false);
     const [selectedPlan, setSelectedPlan] = useState({ type: "", price: "" });
+    const [lastClicked, setLastClicked] = useState(null);
+
+    // const handleClickedDiv = (event) => {
+        
+    // }
+
     useEffect(() => {
         setIsButtonDisabled(!selectedPlan.type);
     }, [selectedPlan.type, setIsButtonDisabled]);
@@ -45,13 +51,17 @@ function Plan() {
         : PLAN_PRICES.monthly[type];
         setSelectedPlan({ type, price });
         setIsButtonDisabled(false);
+        const clickedDiv = event.target;
+        if (lastClicked){
+            lastClicked.classList.remove('clicked');
+        }
+        lastClicked.classList.add('clicked');
+        setLastClicked(clickedDiv)
     };
 
     info.plan.duration = (!toggleOn ? 'Monthly' : 'Yearly')
     info.plan.price = selectedPlan.price;
     info.plan.type = selectedPlan.type
-
-    
 
   return (
     <section className="details">
@@ -59,7 +69,7 @@ function Plan() {
         <h2>Select your plan</h2>
         <small>You have the option of monthly or yearly billing</small>
         <div className="cards-container-plan">
-            <div className="card" onClick={handleFocus}>
+            <div className={`card ${lastClicked === 'div1' ? 'clicked' : ''}`} onClick={handleFocus}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
                     <g fill="none" fill-rule="evenodd">
                         <circle cx="20" cy="20" r="20" fill="#FFAF7E"/>
@@ -79,7 +89,7 @@ function Plan() {
                     </div>
                 }
             </div>    
-            <div className="card" onClick={handleFocus}>
+            <div className={`card ${lastClicked === 'div2' ? 'clicked' : ''}`} onClick={handleFocus}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
                     <g fill="none" fill-rule="evenodd">
                         <circle cx="20" cy="20" r="20" fill="#F9818E"/>
@@ -100,7 +110,7 @@ function Plan() {
             
                 }
             </div>
-            <div className="card" onClick={handleFocus}>
+            <div className={`card ${lastClicked === 'div3' ? 'clicked' : ''}`} onClick={handleFocus}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
                     <g fill="none" fill-rule="evenodd">
                         <circle cx="20" cy="20" r="20" fill="#483EFF"/>

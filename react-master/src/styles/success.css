@@ -1,0 +1,15 @@
+.final {
+    width: 80%; 
+    text-align: center;
+    margin: auto;
+    background-color: #fff;
+}
+
+@media (max-width: 767px){
+    .final{
+        margin-top: -250px;
+        z-index: 1;
+        border-radius: 15px;
+        padding: 30px;
+    }
+}

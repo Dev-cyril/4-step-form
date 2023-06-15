@@ -1,4 +1,4 @@
-# Frontend Mentor - IP address tracker
+# Frontend Mentor - Four-step form
 
 ## Introduction
 Here is a 4-step form with validaation. This projects explored differnt concepts in react framework.

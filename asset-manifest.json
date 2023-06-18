@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/4-step-form/static/css/main.b27a032a.css",
+    "main.js": "/4-step-form/static/js/main.5c8eed65.js",
+    "static/media/bg-sidebar-desktop.svg": "/4-step-form/static/media/bg-sidebar-desktop.6918153f38678372ceb1.svg",
+    "static/media/bg-sidebar-mobile.svg": "/4-step-form/static/media/bg-sidebar-mobile.ad41661b40ca0b967f3a.svg",
+    "index.html": "/4-step-form/index.html",
+    "main.b27a032a.css.map": "/4-step-form/static/css/main.b27a032a.css.map",
+    "main.5c8eed65.js.map": "/4-step-form/static/js/main.5c8eed65.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b27a032a.css",
+    "static/js/main.5c8eed65.js"
+  ]
+}

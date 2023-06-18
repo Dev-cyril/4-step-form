@@ -23,11 +23,7 @@ function Plan() {
     const { setIsButtonDisabled } = useContext(ButtonContext);
     const [toggleOn, setToggleOn] = useState(false);
     const [selectedPlan, setSelectedPlan] = useState({ type: "", price: "" });
-    const [lastClicked, setLastClicked] = useState(null);
-
-    // const handleClickedDiv = (event) => {
-        
-    // }
+    const [activeDiv, setActiveDiv] = useState([false, false, false])
 
     useEffect(() => {
         setIsButtonDisabled(!selectedPlan.type);
@@ -43,7 +39,7 @@ function Plan() {
         info.plan.duration = duration;
     };
 
-    const handleFocus = (event) => {
+    const handleFocus = (event, div) => {
         const card = event.currentTarget;
         const type = card.querySelector("h3").innerText;
         const price = toggleOn
@@ -51,16 +47,17 @@ function Plan() {
         : PLAN_PRICES.monthly[type];
         setSelectedPlan({ type, price });
         setIsButtonDisabled(false);
-        const clickedDiv = event.target;
-        if (lastClicked){
-            lastClicked.classList.remove('clicked');
-        }
-        lastClicked.classList.add('clicked');
-        setLastClicked(clickedDiv)
+        if (div === 'div1'){
+            setActiveDiv([true, false, false])
+        } else if (div === 'div2'){
+            setActiveDiv([false, true, false])
+        } else if (div === 'div3'){
+            setActiveDiv([false, false, true])
+        } 
     };
 
     info.plan.duration = (!toggleOn ? 'Monthly' : 'Yearly')
-    info.plan.price = selectedPlan.price;
+    info.plan.price = parseInt(selectedPlan.price.replace('$', ''));
     info.plan.type = selectedPlan.type
 
   return (
@@ -69,7 +66,7 @@ function Plan() {
         <h2>Select your plan</h2>
         <small>You have the option of monthly or yearly billing</small>
         <div className="cards-container-plan">
-            <div className={`card ${lastClicked === 'div1' ? 'clicked' : ''}`} onClick={handleFocus}>
+            <div className={`card ${activeDiv[0] ? 'clicked' : ''}`} onClick={(event) => handleFocus(event, 'div1')}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
                     <g fill="none" fill-rule="evenodd">
                         <circle cx="20" cy="20" r="20" fill="#FFAF7E"/>
@@ -89,7 +86,7 @@ function Plan() {
                     </div>
                 }
             </div>    
-            <div className={`card ${lastClicked === 'div2' ? 'clicked' : ''}`} onClick={handleFocus}>
+            <div className={`card ${activeDiv[1] ? 'clicked' : ''}`} onClick={(event) => handleFocus(event, 'div2')}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
                     <g fill="none" fill-rule="evenodd">
                         <circle cx="20" cy="20" r="20" fill="#F9818E"/>
@@ -110,7 +107,7 @@ function Plan() {
             
                 }
             </div>
-            <div className={`card ${lastClicked === 'div3' ? 'clicked' : ''}`} onClick={handleFocus}>
+            <div className={`card ${activeDiv[2] ? 'clicked' : ''}`} onClick={(event) => handleFocus(event, 'div3')}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
                     <g fill="none" fill-rule="evenodd">
                         <circle cx="20" cy="20" r="20" fill="#483EFF"/>

@@ -9,6 +9,8 @@ function FinishUp() {
   const change = () => {
     setActiveIndex(1)
   };
+  const values = Object.values(info.add_ons.price);
+  const sum = values.reduce((acc, cur) => acc + cur, 0) + info.plan.price;
 
   return (
     <section className="details">
@@ -19,22 +21,22 @@ function FinishUp() {
           <div className="card-adds-finish">
             <div>
               {info.plan.type} ({info.plan.duration}) <br />
-              <small onClick={change} style={{cursor: 'pointer'}}>Change</small>
+              <p onClick={change} style={{cursor: 'pointer'}}>Change</p>
             </div>
-            <div className="price">{info.plan.price}</div>
+            <div className="price">${info.plan.price}</div>
           </div>
           {Object.keys(info.add_ons.type).map((key) =>
             info.add_ons.type[key] ? (
-              <div className="card-adds-finish" key={key}>
+              <div className="card-adds-finish-adds" key={key}>
                 <div>{key}</div>
-                <div className="price">{info.add_ons.price[key]}</div>
+                <div className="price" >+${info.add_ons.price[key]}/{info.plan.duration === 'Monthly' ? 'mo' : 'yr'}</div>
               </div>
             ) : null
           )}
         </div>
-        <div className="card-adds">
-          <h4>Total per {info.plan.duration}</h4>
-          <div className="price"></div>
+        <div className="card-final">
+          <h4>Total (per {info.plan.duration.split("ly")})</h4>
+          <div className="price">${sum}/{info.plan.duration === 'Monthly' ? 'mo' : 'yr'}</div>
         </div>
       </div>
     </section>

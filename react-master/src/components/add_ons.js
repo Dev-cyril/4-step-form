@@ -4,7 +4,6 @@ import { ButtonContext } from "./button";
 import '../styles/add_ons.css'
 
 function AddOns() {
-  console.log(info.plan.duration === 'Monthly')
 
   const services = useRef(null)
   const storage = useRef(null)
@@ -22,17 +21,17 @@ function AddOns() {
 
   const handleCheckboxChange1 = (event) => {
     setIsChecked1(event.target.checked);
-    info.add_ons.price['Online services'] = services.current.textContent
+    info.add_ons.price['Online services'] = parseInt(services.current.textContent.split("/")[0].replace('$', ''));
   };
 
   const handleCheckboxChange2 = (event) => {
     setIsChecked2(event.target.checked);
-    info.add_ons.price['Larger storage'] = storage.current.textContent
+    info.add_ons.price['Larger storage'] = parseInt(storage.current.textContent.split("/")[0].replace('$', ''));
   };
 
   const handleCheckboxChange3 = (event) => {
     setIsChecked3(event.target.checked);
-    info.add_ons.price['Customizable Profile'] = profile.current.textContent
+    info.add_ons.price['Customizable Profile'] = parseInt(profile.current.textContent.split("/")[0].replace('$', ''));
   };
 
   info.add_ons.type = {'Online services': isChecked1, 'Larger storage': isChecked2, 'Customizable Profile': isChecked3}
@@ -44,7 +43,7 @@ function AddOns() {
         <h2>Pick add-ons</h2>
         <small>Add-ons helps to enhance your gaming experience</small>
         <div className="cards-container">
-            <div className="card-adds">
+            <div className={`card-adds ${isChecked1 ? 'clicked' : ''}`}>
                 <input type="checkbox" className="services"
                         checked={isChecked1}
                         onChange={handleCheckboxChange1}/>
@@ -58,7 +57,7 @@ function AddOns() {
                     <div className="price fir" ref={services}>$10/yr</div>
                 }
             </div>
-            <div className="card-adds">
+            <div className={`card-adds ${isChecked2 ? 'clicked' : ''}`}>
                 <input type="checkbox" className="services"
                         checked={isChecked2}
                         onChange={handleCheckboxChange2}/>
@@ -72,7 +71,7 @@ function AddOns() {
                     <div className="price sec" ref={storage}>$20/yr</div>
                 }
             </div>
-            <div className="card-adds">
+            <div className={`card-adds ${isChecked3 ? 'clicked' : ''}`}>
                 <input type="checkbox" className="services"
                         checked={isChecked3}
                         onChange={handleCheckboxChange3}/>

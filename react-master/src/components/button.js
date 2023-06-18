@@ -65,7 +65,7 @@ const Button = ({ components }) => {
                     </button>
                   ) : (
                     <button disabled={isButtonDisabled} className="finish-button" onClick={next}>
-                      Finish
+                      Confirm
                     </button>
                   )}
                 </div>

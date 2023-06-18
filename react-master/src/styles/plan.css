@@ -12,16 +12,21 @@
 }
 
 .card{
-    box-shadow: .3px .3px 1px 3px rgba(128, 128, 128, 0.13);
+    border: 1px solid rgba(128, 128, 128, 0.432);
     width: 30%;
     border-radius: 5px;
     padding: 10px 20px;
 }
+.card:hover {
+    border: 1px solid rgba(0, 0, 255, 0.404);
+    cursor: pointer;
+}
 .clicked{
-    background-color: #130468
+    background-color: rgba(188, 236, 248, 0.171);
+    border: 1px solid rgba(0, 0, 255, 0.404);
 }
 .card:focus{
-    border: 1px solid rgba(0, 0, 0, 0.39);
+    border: 1px solid rgba(0, 0, 0, 0.521);
 }
 
 .info h2, .info h3, .info h5{

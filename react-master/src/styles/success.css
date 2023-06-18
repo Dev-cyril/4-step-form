@@ -1,8 +1,9 @@
 .final {
     width: 80%; 
     text-align: center;
-    margin: auto;
+    margin: 50px auto;
     background-color: #fff;
+    min-height: 400px;
 }
 
 @media (max-width: 767px){

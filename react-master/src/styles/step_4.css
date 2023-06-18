@@ -5,22 +5,34 @@
     margin: auto;
     flex-direction: column;
 }
-
+.info p:hover{
+    text-decoration: underline;
+}
+.info p, .card-adds-finish-adds > div{
+    color: #808080;
+    font-size: 15px;
+}
 .cards-container-finish {
     display: flex;
     border-radius: 5px;
     flex-direction: column;
     gap: 10px;
-    background-color: rgba(127, 255, 212, 0.281);
+    background-color: rgba(199, 243, 229, 0.281);
 }
-
+.card-adds-finish-adds{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto auto 20px;
+    align-items: center;
+    padding-right: 10px;
+}
 .card-adds-finish {
     width: 90%;
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
     display: flex;
-    box-sizing: border-box;
     margin: auto;
 }
 
@@ -33,18 +45,31 @@
     justify-content: center;
     align-items: center;
     font-size: 13px;
-    color: rgba(0, 0, 0, 0.61);
+    color: rgb(0, 0, 0);
 }
-
-.card:focus {
-    border: 1px solid rgba(0, 0, 0, 0.39);
+.card-adds-finish .price{
+    font-size: 20px;
 }
-
+.card-adds-finish-adds .price {
+    color: rgba(0, 0, 0, 0.815);
+}
 .info h2,
 .info h3,
 .info h6 {
     color: hsla(240, 93%, 17%, 0.945);
     margin: 5px 0 0;
+}
+.card-final{
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    padding-right: 15px;
+}
+.card-final .price{
+    font-size: 22px;
+    color: rgb(10, 78, 206);
 }
 
 @media (max-width: 767px) {

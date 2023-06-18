@@ -2,7 +2,7 @@ export const info = {
   plan: {
     duration: '',
     type: '',
-    price: ''
+    price: 0
   },
   add_ons: {
     type: {
@@ -11,9 +11,9 @@ export const info = {
       'Customizable Profile': false
     },
     price: {
-      'Online services': '',
-      'Larger storage': '',
-      'Customizable Profile': ''
+      'Online services': 0,
+      'Larger storage': 0,
+      'Customizable Profile': 0
     }
   }
 };
